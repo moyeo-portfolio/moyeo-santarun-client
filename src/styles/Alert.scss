@@ -1,0 +1,85 @@
+
+.alert-background {
+    position: absolute;
+    top: 350px;
+    margin: auto;
+}
+
+.bbb{
+    width: 390px;
+    height: 160px;
+    display : flex;
+    background : rgb(255, 184, 184);
+    color : rgb(0, 0, 0);
+    border-radius: 20px;
+}
+
+h2{
+    margin-left: 20px;
+    color: rgb(215, 248, 149);
+    font-family: Nanum Gothic;
+}
+
+.santa{
+    margin-left: 10px;
+    margin-top: 35px;
+    border-radius: 50%;
+}
+
+.santaBox{
+    width: 300px;
+}
+
+.sB1{
+    height: 80px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+
+.sB2{
+    display: flex;
+    height: 80px;
+}
+
+.sB2_a{
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.sB2_aa{
+    width: 75px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background :rgb(243, 124, 124);
+
+    border-radius: 10px;
+}
+
+.sB2_bb{
+    width: 75px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background :rgb(243, 124, 124);
+
+    border-radius: 10px;
+}
+
+
+
+.sB2_b{
+    width:150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

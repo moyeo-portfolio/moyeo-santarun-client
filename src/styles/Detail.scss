@@ -1,0 +1,97 @@
+.detail{
+    width: 100%;
+    height: 200px;
+    background: rgba(255,0,0,0.25);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    /* 남은 영역 내차지 */
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoText {
+    text-align: left;
+    color: rgb(63, 62, 62);
+    font-size: 14px;
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-left: 30px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.detail-detail2{
+    width: 330px;
+    height: 350px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 10%;
+    background: #FFE5E5;
+    text-align: center;
+    padding-top: 50px;
+    font-size: 24px;
+}
+
+.detail-button {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background: rgba(195, 82, 82, 0);
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    border: 0;
+    justify-content: center;
+    margin: auto;
+    background-color: #FFE5E5;
+}
+
+.deatailBox{
+    /* flutter 처럼 레이아웃잡기*/
+    display: flex;
+    flex-direction: column;
+    /* main Axes */
+    justify-content: center;
+    /* cross Axes */
+    align-items: center;
+    margin-top: 10%;
+
+    /* 픽셀로 때려박을때 */
+
+    /*
+    fixed: 화면에 고정
+    absolute: 상위 div에 고정
+    */
+
+    /* top, left, bottom, right 꼭 써야함 */
+
+
+
+    /* margin padding */
+
+}

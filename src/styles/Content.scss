@@ -1,0 +1,113 @@
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    margin-top: 80px;
+    margin-left: 45px;
+    width: 300px;
+    height: 600px;
+    border-radius: 30px;
+    background: rgba(255,0,0,0.25);
+  }
+  
+  .input1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(74, 73, 73);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
+    background: rgb(255, 221, 221);
+    border-radius: 40px;
+    border: 0;
+    padding: 0 20px;
+  }
+  
+  .input2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(74, 73, 73);
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .input22 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  
+  }
+  
+  .box2 {
+    width: 20px;
+    height: 50px;
+    background: rgb(255, 221, 221);
+    border-radius: 40px;
+    border: 0;
+    padding: 0 20px;
+  }
+  
+  .input3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(74, 73, 73);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  .input33 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .box3 {
+    width: 100px;
+    height: 50px;
+    background: rgb(255, 221, 221);
+    border-radius: 40px;
+    border: 0;
+    padding: 0 20px;
+  }
+  
+  .button {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    background: rgb(255, 221, 221);
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    justify-content: center;
+    margin-left: 115px;
+    margin-top: 50px;
+    border: 0;
+  }
+  
+  
+  
+  
