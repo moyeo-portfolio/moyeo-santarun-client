@@ -1,12 +1,19 @@
   
   .intro {
+    width: 100%;
     height: 100vh;
+
     background-image: url("../assets/snow.png"), url("../assets/snow2.png");
   
     -webkit-animation: snow 10s linear infinite;
     -moz-animation: snow 10s linear infinite;  
     -ms-animation: snow 10s linear infinite;
     animation: snow 10s linear infinite;
+  }
+
+  .session {
+    display: grid;
+    align-items: center;
   }
   
   // @-webkit-keyframes sway-0 {
