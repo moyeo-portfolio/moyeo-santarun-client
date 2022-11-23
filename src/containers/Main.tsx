@@ -1,22 +1,43 @@
 import React, { Component, useReducer, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch, useSelector } from 'react-redux';
 import { reducer } from "../reducers";
-
+import { useDispatch, useSelector } from 'react-redux';
+import { increase, decrease } from "../store/counter";
 import '../styles/Main.scss';
 import '../styles/Background-Sky.scss';
 
+import { mainTestData } from "../testData/mainTestData";
+
+import { url } from "../utils/url";
 import profile from '../assets/profile.png';
 import marginTop from '../assets//main-top.png';
+import axios from "axios";
 
-export default function Main() {
+export default function Main () {
+  // https://react.vlpt.us/redux-middleware/01-prepare.html
   const navigate = useNavigate();
 
-  const [resize, setResize] = useState([0, 0]);
+  const [res, setRes] = useState<JSON[]>([]);
+  const [resize, setResize] = useState<number[]>([0, 0]);
   const handleResize = () => {
-    setResize([window.innerWidth, window.innerHeight]);
+    if (window.innerHeight < 645)
+      setResize([window.innerWidth, 645]);
+    else
+      setResize([window.innerWidth, window.innerHeight]);
   };
+
+  const getMainDataF = async () => {
+    try {
+      const result = await axios(process.env.REACT_APP_DB_HOST + '/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/');
+      setRes(result.data.SearchSTNBySubwayLineInfo.row);
+      console.log(result.data.SearchSTNBySubwayLineInfo.row);
+    } catch (e) {
+
+    }
+  }
   useEffect(() => {
+    getMainDataF();
+    
     setResize([window.innerWidth, window.innerHeight]);
     window.addEventListener('resize', handleResize);
     return () => {
@@ -24,16 +45,19 @@ export default function Main() {
     }
   }, []);
 
-  // const { loading, data: users, error } = state;
-
-  // if (loading) return <div>로딩중..</div>;
-  // if (error) return <div>에러가 발생했습니다</div>;
-  // if (!users) return null;
+  // type RootState = ReturnType<typeof store.getState>
+  // const number = useSelector((store: RootState) => store);
+  // const dispatch = useDispatch();
 
   return (
     <>
+      {/* <div style={{ position: "absolute", right: "0" }}>
+        <button onClick={()=>dispatch(decrease())}>-</button>
+        {number}
+        <button onClick={()=>dispatch(increase())}>+</button>
+      </div> */}
       <div className="main-profile">
-        <img src={profile} onClick={()=>navigate("/Mypage")} />
+        <img src={profile} onClick={()=>navigate(url+"/Mypage")} />
       </div>
 
       <div className="main-top-box">

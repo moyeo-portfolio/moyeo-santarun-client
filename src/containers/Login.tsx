@@ -26,7 +26,7 @@ export default function Login({ setSession }: Props) {
         setPasswd(e.target.value);
     }
 
-    const [loginFail, setLoginFail] = useState<boolean>(true);
+    const [loginFail, setLoginFail] = useState<boolean>(false);
     const [id, setId] = useState<string>("");
     const [passwd, setPasswd] = useState<string>("");
     useEffect(() => {
