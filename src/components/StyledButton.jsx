@@ -5,6 +5,7 @@ export const BackButton = styled.button`
     line-height: 1.5;
 
     position: absolute;
+    top: 0;
 
     font-size: 1rem;
     font-weight: 800;

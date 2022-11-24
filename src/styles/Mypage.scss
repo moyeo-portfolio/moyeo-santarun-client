@@ -1,203 +1,260 @@
 
-.mypage-all {
-    height: 844px;
+.mypage {
+    margin: 37px;
     overflow-y: scroll;
 }
+.mypage::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.mypage::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    transition: all 1s;
+}
+.mypage:hover::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
+}
 
-.appBar {
+.mypage-a {
     width: 100%;
-    height: 80px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
+    text-align: center;
     font-size: 20px;
 }
 
-.profile1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* align-items: center; */
-    width: 340px;
+.mypage-profile {
     height: 150px;
+    margin-bottom: 37px;
+    
+    border-radius: 30px;
     background: #FFE5E5;
-    border-radius: 30px;
-    margin-left: 25px;
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .mypage-profile-inner {
+        padding: 37px;
+        display: flex;
+        align-items: center;
+        font-size: 20px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        .mypage-profile-info {
+            margin-left: 10px;
+        }
+    }
 }
 
-img {
-    // margin-right: 10px;
-}
 
-.text1 {
-    font-size: 24px;
-    text-align: left;
-    margin-top: 10px;
-}
 
-.text2 {
-    font-size: 14px;
-}
+.mypage-content-box {
+    margin-bottom: 37px;
+    padding: 37px;
 
-.profile2 {
-    display: flex;
-    flex-direction:   column;
-    justify-content: center;
-    align-items: center;
-    width: 340px;
-    // height: ;
-    border-radius: 30px;
-    margin-left: 25px;
-    margin-top: 20px;
-    padding: 20px 0;
-}
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-.num1 {
-    font-size: 20px;
-}
-.n1 {
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(142, 56, 56);
-}
-.num2 {
-    font-size: 20px;
-    margin-top: 15px;
-}
-.n2 {
-    font-size: 25px;
-    font-weight: bold;
-    color: rgb(142, 56, 56);
-}
-
-.op1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 340px;
+
+    border-radius: 30px;
+    .mypage-content-help {
+        font-size: 20px;
+    }
+    .mypage-content-helpnum {
+        font-size: 25px;
+        font-weight: bold;
+        color: rgb(142, 56, 56);
+    }
+}
+
+.mypage-comment-box {
+    width: 100%;
+    max-height: 258px;
+    padding-left: 12px;
+    overflow-y: scroll;
+    .mypage-comment {
+        height: 70px;
+        margin: 12px 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        background-color: #FFE5E5;
+        .mypage-comment-usertime {
+            padding-left: 25px;
+            color: rgb(75, 75, 75);
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .mypage-comment-title {
+            padding-right: 25px;
+            font-size: 19px;
+            font-weight: 700;
+
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            color: rgba(0, 0, 0, 1);
+        }
+    }
+}
+.mypage-comment-box::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.mypage-comment-box::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    transition: all 1s;
+}
+.mypage-comment-box:hover::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
+}
+
+
+
+.mypage-bottom-box {
     height: 60px;
-    background: #FFE5E5;
-    border-radius: 30px;
-    margin-left: 25px;
-    margin-top: 20px;
-}
+    margin-bottom: 20px;
 
-.op2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 340px;
-    height: 60px;
+    
+    border-radius: 20px;
     background: #FFE5E5;
-    border-radius: 30px;
-    margin-left: 25px;
-    margin-top: 10px;
 }
 
-.op3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 340px;
-    height: 60px;
-    background: #FFE5E5;
-    border-radius: 30px;
-    margin-left: 25px;
-    margin-top: 10px;
-}
-
-.op4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 340px;
-    height: 60px;
-    background: #FFE5E5;
-    border-radius: 30px;
-    margin-left: 25px;
-    margin-top: 10px;
-}
-
-.pInfoText {
-    text-align: left;
-    color: rgb(63, 62, 62);
-    font-size: 14px;
-    padding-left: 30px;
-}
-
-img {
-    // width: 80px;
-    // height: 80px;
-    // border-radius: 50%;
-    // margin-left: 30px;
-    /*margin-bottom: 10px;
-    margin-right: 10px; */
-}
-
-.detail2{
-    width: 330px;
-    height: 350px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 10%;
-    background: rgba(255,0,0,0.25);
-    text-align: center;
-    padding-top: 50px;
-    font-size: 24px;
-}
-
-.button {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 50px;
-    border-radius: 5%;
-    background: rgba(195, 82, 82, 0);
-    text-align: center;
-    font-weight: bold;
-    font-size: large;
-    border: 1.5px solid black;
-    justify-content: center;
-    margin-left: 45px;
-    margin-bottom: 100px;
-}
-
-.deatailBox{
-    /* flutter 처럼 레이아웃잡기*/
-    display: flex;
-    flex-direction: column;
-    /* main Axes */
-    justify-content: center;
-    /* cross Axes */
-    align-items: center;
-    margin-top: 10%;
-}
-
-
-//
-// .main-comment {
-//     height: 70px;
-//     line-height: 70px;
-//     margin-bottom: 20px;
-//     padding: 0 10px;
-//     border-radius: 10px;
-//     background-color: #FFE5E5;
+// .text1 {
+//     font-size: 24px;
+//     text-align: left;
+//     margin-top: 10px;
 // }
-// .main-comment-time {
-//     width: 100px;
-//     float: left;
-//     color: rgb(124, 124, 124);
+
+// .text2 {
 //     font-size: 14px;
 // }
-// .main-comment-title {
-//     width: 200px;
-//     float: right;
-//     white-space: nowrap;
-//     overflow: hidden;
-//     text-overflow: ellipsis;
+
+// .op1 {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 340px;
+//     height: 60px;
+//     background: #FFE5E5;
+//     border-radius: 30px;
+//     margin-left: 25px;
+//     margin-top: 20px;
+// }
+
+// .op2 {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 340px;
+//     height: 60px;
+//     background: #FFE5E5;
+//     border-radius: 30px;
+//     margin-left: 25px;
+//     margin-top: 10px;
+// }
+
+// .op3 {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 340px;
+//     height: 60px;
+//     background: #FFE5E5;
+//     border-radius: 30px;
+//     margin-left: 25px;
+//     margin-top: 10px;
+// }
+
+// .op4 {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     width: 340px;
+//     height: 60px;
+//     background: #FFE5E5;
+//     border-radius: 30px;
+//     margin-left: 25px;
+//     margin-top: 10px;
+// }
+
+// .pInfoText {
+//     text-align: left;
+//     color: rgb(63, 62, 62);
+//     font-size: 14px;
+//     padding-left: 30px;
+// }
+
+// img {
+//     // width: 80px;
+//     // height: 80px;
+//     // border-radius: 50%;
+//     // margin-left: 30px;
+//     /*margin-bottom: 10px;
+//     margin-right: 10px; */
+// }
+
+// .detail2{
+//     width: 330px;
+//     height: 350px;
+//     margin-top: 50px;
+//     margin-bottom: 50px;
+//     border-radius: 10%;
+//     background: rgba(255,0,0,0.25);
+//     text-align: center;
+//     padding-top: 50px;
+//     font-size: 24px;
+// }
+
+// .button {
+//     display: flex;
+//     flex-direction: column;
+//     width: 300px;
+//     height: 50px;
+//     border-radius: 5%;
+//     background: rgba(195, 82, 82, 0);
+//     text-align: center;
+//     font-weight: bold;
+//     font-size: large;
+//     border: 1.5px solid black;
+//     justify-content: center;
+//     margin-left: 45px;
+//     margin-bottom: 100px;
+// }
+
+// .deatailBox{
+//     /* flutter 처럼 레이아웃잡기*/
+//     display: flex;
+//     flex-direction: column;
+//     /* main Axes */
+//     justify-content: center;
+//     /* cross Axes */
+//     align-items: center;
+//     margin-top: 10%;
 // }

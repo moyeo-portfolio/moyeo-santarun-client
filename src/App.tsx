@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import classnames from 'classnames';
+import React, { createContext, useContext, useState, } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import classnames from 'classnames';
 import './styles/App.scss';
 import './styles/Background-Sky.scss';
 
@@ -10,32 +10,33 @@ import Content from './containers/Content';
 import Mypage from './containers/Mypage';
 import Login from './containers/Login';
 
-import { url } from './utils/url';
+import { SessionContext } from './utils/session';
+import { baseUrl } from './utils/baseUrl';
 import background from './assets/background.png';
 
-function App() {
-  const [session, setSession] = useState<boolean>(false);
-  const [addComment, setAddComment] = useState<boolean>(false);
-  const [helpComment, setHelpComment] = useState<boolean>(false);
-  
+export default function App() {
+  const [session, setSession] = useState(false);
+
   return (
-    <Router>
-      <div className={classnames("intro", {
-        "session": !session,
-      })}>
-        <Routes>
-          {session?
-            <Route path={url} element={<Main />} />:
-            <Route path={url} element={<Login setSession={setSession} />} />
-          }
-          <Route path={url+"/Content"} element={<Content setAddComment={setAddComment} />} />
-          <Route path={url+"/Detail"} element={<Detail setHelpComment={setHelpComment} />} />
-          <Route path={url+"/Mypage"} element={<Mypage helpComment={helpComment} addComment={addComment} setSession={setSession}/>} />
-        </Routes>
-      </div>
-      <img id="root-background" src={background} />
-    </Router>
+    <SessionContext.Provider value={{ session: false, setSession: ()=>setSession(!session)}}>
+      <Router>
+        <div className={classnames("intro", {
+          "session": !session,
+        })}>
+          <Routes>
+            {session?
+              <>
+                <Route path={baseUrl} element={<Main />} />
+                <Route path={baseUrl+"/Content"} element={<Content />} />
+                <Route path={baseUrl+"/Detail"} element={<Detail />} />
+                <Route path={baseUrl+"/Mypage"} element={<Mypage />} />
+              </>:
+              <Route path={baseUrl} element={<Login />} />
+            }
+          </Routes>
+        </div>
+        <img id="root-background" src={background} />
+      </Router>
+    </SessionContext.Provider>
   );
 }
-
-export default App;

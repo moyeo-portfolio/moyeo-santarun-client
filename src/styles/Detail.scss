@@ -1,97 +1,101 @@
-.detail{
+
+.detail-top {
     width: 100%;
     height: 200px;
+    // padding-top: 60px;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+
     background: rgba(255,0,0,0.25);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
-.title {
-    /* 남은 영역 내차지 */
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.detail-title {
+    margin-top: 40px;
+    padding: 0 10px;
     font-size: 24px;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.detail-usertime {
+    margin-top: 40px;
+    img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+    }
+    .detail-usertime-inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        color: rgb(63, 62, 62);
+        font-size: 14px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .detail-time {
+        margin-left: 10px;
+    }
 }
 
-.description {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+
+.detail-content-box {
+    width: 100%;
 }
 
-.info {
-    display: flex;
-    flex-direction: column;
-}
+.detail-content {
+    margin: 37px;
+    padding: 50px;
 
-.infoText {
-    text-align: left;
-    color: rgb(63, 62, 62);
-    font-size: 14px;
-}
-
-img {
-    // width: 60px;
-    // height: 60px;
-    // border-radius: 50%;
-    // margin-left: 30px;
-    // margin-bottom: 10px;
-    // margin-right: 10px;
-}
-
-.detail-detail2{
-    width: 330px;
-    height: 350px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border-radius: 10%;
+    border-radius: 20px;
     background: #FFE5E5;
+}
+.detail-content-scroll {
+    // max-height: 250px;
     text-align: center;
-    padding-top: 50px;
     font-size: 24px;
+
+    overflow-y: scroll;
+}
+.detail-content-scroll::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+.detail-content-scroll::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 10px;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+    transition: all 1s;
+}
+.detail-content-scroll:hover::-webkit-scrollbar-thumb {
+    background-color: #a5a5a5;
 }
 
-.detail-button {
-    display: flex;
-    flex-direction: column;
+
+
+.detail-btn {
     width: 150px;
     height: 50px;
-    border-radius: 20px;
-    background: rgba(195, 82, 82, 0);
-    text-align: center;
+    margin: auto;
+    
     font-weight: bold;
     font-size: large;
     border: 0;
-    justify-content: center;
-    margin: auto;
-    background-color: #FFE5E5;
-}
-
-.deatailBox{
-    /* flutter 처럼 레이아웃잡기*/
+    
     display: flex;
-    flex-direction: column;
-    /* main Axes */
     justify-content: center;
-    /* cross Axes */
+    text-align: center;
     align-items: center;
-    margin-top: 10%;
-
-    /* 픽셀로 때려박을때 */
-
-    /*
-    fixed: 화면에 고정
-    absolute: 상위 div에 고정
-    */
-
-    /* top, left, bottom, right 꼭 써야함 */
-
-
-
-    /* margin padding */
-
+    
+    border-radius: 20px;
+    background-color: #FFE5E5;
 }

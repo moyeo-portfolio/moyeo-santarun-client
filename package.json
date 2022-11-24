@@ -23,15 +23,21 @@
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.4.2",
     "sass": "^1.55.0",
+    "style-loader": "^3.3.1",
     "styled-components": "^5.3.6",
-    "web-vitals": "^2.1.4"
+    "vue": "^3.2.45",
+    "web-vitals": "^2.1.4",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
   },
   "scripts": {
+    "dev": "webpack --mode development",
     "start": "react-scripts start",
-    "build": "env-cmd -f .env.production react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "homepage": ".",
   "eslintConfig": {
     "extends": [
       "react-app",

@@ -8,7 +8,7 @@ import '../styles/Background-Sky.scss';
 
 import { mainTestData } from "../testData/mainTestData";
 
-import { url } from "../utils/url";
+import { baseUrl } from "../utils/baseUrl";
 import profile from '../assets/profile.png';
 import marginTop from '../assets//main-top.png';
 import axios from "axios";
@@ -18,6 +18,16 @@ export default function Main () {
   const navigate = useNavigate();
 
   const [res, setRes] = useState<JSON[]>([]);
+  const getMainDataF = async () => {
+    try {
+      const result = await axios(process.env.REACT_APP_DB_HOST + '/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/');
+      setRes(result.data.SearchSTNBySubwayLineInfo.row);
+      // console.log(result.data.SearchSTNBySubwayLineInfo.row);
+    } catch (e) {
+
+    }
+  }
+
   const [resize, setResize] = useState<number[]>([0, 0]);
   const handleResize = () => {
     if (window.innerHeight < 645)
@@ -25,16 +35,6 @@ export default function Main () {
     else
       setResize([window.innerWidth, window.innerHeight]);
   };
-
-  const getMainDataF = async () => {
-    try {
-      const result = await axios(process.env.REACT_APP_DB_HOST + '/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/');
-      setRes(result.data.SearchSTNBySubwayLineInfo.row);
-      console.log(result.data.SearchSTNBySubwayLineInfo.row);
-    } catch (e) {
-
-    }
-  }
   useEffect(() => {
     getMainDataF();
     
@@ -57,14 +57,14 @@ export default function Main () {
         <button onClick={()=>dispatch(increase())}>+</button>
       </div> */}
       <div className="main-profile">
-        <img src={profile} onClick={()=>navigate(url+"/Mypage")} />
+        <img src={profile} onClick={()=>navigate(baseUrl+"/Mypage")} />
       </div>
 
       <div className="main-top-box">
         <div className="main-top">
           <div className="main-top-time">
             구름님의 소원<br/>
-            2022.12.25
+            12:25:07
           </div>
           <div className="main-top-title">짱 큰 눈사람 만들어주세요</div>
           <img src={marginTop} />
@@ -76,56 +76,31 @@ export default function Main () {
           {
             comment: "짱 큰 눈사람 만들어주세요", 
             user: "유저님의 소원",
-            time: "2022.12.25",
+            time: "12:25:07",
           },
           {
             comment: "크리스마스 저녁을 함께할 산타를 구해요", 
             user: "유저님의 소원",
-            time: "2022.12.25",
+            time: "12:25:07",
           },
           {
             comment: "아이에게 산타분장으로 선물을 전달해주세요!", 
             user: "구름님의 소원",
-            time: "2022.12.25",
+            time: "12:25:07",
           },
           {
             comment: "짱 큰 눈사람 만들어주세요", 
             user: "구름님의 소원",
-            time: "2022.12.25",
+            time: "12:25:07",
           },
           {
             comment: "크리스마스 저녁을 함께할 산타를 구해요", 
             user: "유저님의 소원",
-            time: "2022.12.25",
+            time: "12:25:07",
           },
-          {
-            comment: "짱 큰 눈사람 만들어주세요", 
-            user: "유저님의 소원",
-            time: "2022.12.25",
-          },
-          {
-            comment: "크리스마스 저녁을 함께할 산타를 구해요", 
-            user: "유저님의 소원",
-            time: "2022.12.25",
-          },
-          {
-            comment: "아이에게 산타분장으로 선물을 전달해주세요!", 
-            user: "구름님의 소원",
-            time: "2022.12.25",
-          },
-          {
-            comment: "짱 큰 눈사람 만들어주세요", 
-            user: "구름님의 소원",
-            time: "2022.12.25",
-          },
-          {
-            comment: "크리스마스 저녁을 함께할 산타를 구해요", 
-            user: "유저님의 소원",
-            time: "2022.12.25",
-          },         
         ].map((data, idx)=> {
           return (
-            <Link to="/Detail" key={idx}>
+            <Link to="/santarun/Detail" key={idx}>
               <div className="main-comment">
                 <div className="main-comment-time">
                   {data.user}<br/>
@@ -144,7 +119,7 @@ export default function Main () {
           placeholder= "소원이 있으신가요? 당신의 산타를 찾아보세요!"
           type="text" 
         />
-        <button className="main-send" onClick={()=>navigate("/Content")}>send</button>
+        <button className="main-send" onClick={()=>navigate(baseUrl+"/Content")}>send</button>
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import '../styles/Alert.scss';
 
 import santa from '../assets/santa.png';
 
-export default function Alert({ where, setAlert, setHelpComment }) {
+export default function Alert({ where, setAlert }) {
   const navigate = useNavigate();
   useEffect(() => {
   }, []);
@@ -27,7 +27,6 @@ export default function Alert({ where, setAlert, setHelpComment }) {
               onClick={()=>{
                   if (where === "Detail"){
                     navigate('/Mypage');
-                    setHelpComment(true);
                   }
                 }}>
                 <div className='sB2_aa'>

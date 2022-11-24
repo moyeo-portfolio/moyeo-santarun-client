@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import '../styles/Login.scss';
 import '../styles/Background-Sky.scss';
 
+import { useSession } from '../utils/session';
+
 import santarun from '../assets/santarun.png';
 import Alert from "./Alert";
 
@@ -12,12 +14,9 @@ const LoginFail = () => {
     );
 }
 
-interface Props {
-    setSession: Function,
-}
-
-export default function Login({ setSession }: Props) {
+export default function Login() {
     const navigate = useNavigate();
+    const session = useSession();
 
     const handleId = (e: React.ChangeEvent<HTMLInputElement>,) => {
         setId(e.target.value);
@@ -33,6 +32,7 @@ export default function Login({ setSession }: Props) {
     }, []);
 
   return (
+    // <SessionContext.Consumer>
     <div className="login">
         <div className="login-main-img">
             <img src={santarun} />
@@ -61,7 +61,7 @@ export default function Login({ setSession }: Props) {
                     className='login-btn' 
                     onClick={()=>{
                         if (id === "santa" && passwd === "1234")
-                            setSession(true);
+                            session.setSession();
                         else {
                             setLoginFail(true);
                             setTimeout(()=> {
@@ -83,6 +83,7 @@ export default function Login({ setSession }: Props) {
             
         </div>
     </div>
+    // </SessionContext.Consumer>
   );
 
 }
