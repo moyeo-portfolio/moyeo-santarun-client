@@ -16,6 +16,7 @@ const LoginFail = () => {
 
 export default function Login() {
     const navigate = useNavigate();
+    
     const session = useSession();
 
     const handleId = (e: React.ChangeEvent<HTMLInputElement>,) => {
@@ -41,6 +42,7 @@ export default function Login() {
             <h1>Santa_Run</h1>
             <h4>Un-title</h4>
         </div>
+        <div>아이디: santa / 비밀번호: 1234</div>
         <div className='login-content'>
             <div className="login-input-box">
                 <input 

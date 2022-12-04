@@ -26,12 +26,12 @@ export default function App() {
           <Routes>
             {session?
               <>
-                <Route path={baseUrl} element={<Main />} />
+                <Route path={baseUrl+"/"} element={<Main />} />
                 <Route path={baseUrl+"/Content"} element={<Content />} />
                 <Route path={baseUrl+"/Detail"} element={<Detail />} />
                 <Route path={baseUrl+"/Mypage"} element={<Mypage />} />
               </>:
-              <Route path={baseUrl} element={<Login />} />
+              <Route path={baseUrl+"/"} element={<Login />} />
             }
           </Routes>
         </div>

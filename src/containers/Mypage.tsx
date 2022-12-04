@@ -31,7 +31,7 @@ export default function Mypage() {
         <>
             <BackButton
                 onClick={()=>{
-                    navigate(baseUrl);
+                    navigate(baseUrl+"/");
                 }}>
                 뒤로
             </BackButton>
@@ -129,8 +129,8 @@ export default function Mypage() {
                     <div className='mypage-bottom-box' style={{ marginBottom: "20px" }}>고객센터&gt;</div>
 
                     <LogoutButton onClick={()=>{
+                            navigate(baseUrl+"/");
                             session.setSession();
-                            navigate(baseUrl);
                         }}>
                         로그아웃
                     </LogoutButton>

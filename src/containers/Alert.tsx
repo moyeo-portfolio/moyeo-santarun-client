@@ -3,8 +3,14 @@ import { useNavigate } from "react-router-dom";
 import '../styles/Alert.scss';
 
 import santa from '../assets/santa.png';
+import { baseUrl } from "../utils/baseUrl";
 
-export default function Alert({ where, setAlert }) {
+interface Props {
+  where: string,
+  setAlert: Function,
+}
+
+export default function Alert({ where, setAlert }: Props) {
   const navigate = useNavigate();
   useEffect(() => {
   }, []);
@@ -26,7 +32,7 @@ export default function Alert({ where, setAlert }) {
               className='sB2_a'
               onClick={()=>{
                   if (where === "Detail"){
-                    navigate('/Mypage');
+                    navigate(baseUrl+'/Mypage');
                   }
                 }}>
                 <div className='sB2_aa'>

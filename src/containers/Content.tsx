@@ -25,7 +25,7 @@ export default function Content() {
     <>
       <BackButton 
         onClick={()=>{
-          navigate(baseUrl);
+          navigate(baseUrl+"/");
         }}>
         뒤로
       </BackButton>

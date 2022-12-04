@@ -13,15 +13,26 @@ import profile from '../assets/profile.png';
 import marginTop from '../assets//main-top.png';
 import axios from "axios";
 
+interface Props {
+  STATION_NM: string,
+}
+
 export default function Main () {
   // https://react.vlpt.us/redux-middleware/01-prepare.html
   const navigate = useNavigate();
 
-  const [res, setRes] = useState<JSON[]>([]);
-  const getMainDataF = async () => {
+  const [res, setRes] = useState<Props[]>([]);
+  const getMainDataF = () => {
     try {
-      const result = await axios(process.env.REACT_APP_DB_HOST + '/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/');
-      setRes(result.data.SearchSTNBySubwayLineInfo.row);
+      axios({
+        url: "http://openapi.seoul.go.kr:8088/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/",
+      }).then((res)=>{
+        setRes(res.data.SearchSTNBySubwayLineInfo.row);
+      }).catch((err)=>{
+
+      })
+      // const result = await axios('http://openapi.seoul.go.kr:8088/466d5944556364703834526c75516a/json/SearchSTNBySubwayLineInfo/1/5/');
+      // setRes(result.data.SearchSTNBySubwayLineInfo.row);
       // console.log(result.data.SearchSTNBySubwayLineInfo.row);
     } catch (e) {
 
@@ -37,6 +48,7 @@ export default function Main () {
   };
   useEffect(() => {
     getMainDataF();
+    console.log(res);
     
     setResize([window.innerWidth, window.innerHeight]);
     window.addEventListener('resize', handleResize);
@@ -45,10 +57,6 @@ export default function Main () {
     }
   }, []);
 
-  // type RootState = ReturnType<typeof store.getState>
-  // const number = useSelector((store: RootState) => store);
-  // const dispatch = useDispatch();
-
   return (
     <>
       {/* <div style={{ position: "absolute", right: "0" }}>
@@ -56,6 +64,7 @@ export default function Main () {
         {number}
         <button onClick={()=>dispatch(increase())}>+</button>
       </div> */}
+      {/* <div style={{ position: "absolute", right: "0" }}>{process.env.REACT_APP_DB_HOST}</div> */}
       <div className="main-profile">
         <img src={profile} onClick={()=>navigate(baseUrl+"/Mypage")} />
       </div>
@@ -79,30 +88,31 @@ export default function Main () {
             time: "12:25:07",
           },
           {
-            comment: "크리스마스 저녁을 함께할 산타를 구해요", 
+            comment: "짱 큰 눈사람 만들어주세요", 
             user: "유저님의 소원",
-            time: "12:25:07",
-          },
-          {
-            comment: "아이에게 산타분장으로 선물을 전달해주세요!", 
-            user: "구름님의 소원",
             time: "12:25:07",
           },
           {
             comment: "짱 큰 눈사람 만들어주세요", 
-            user: "구름님의 소원",
-            time: "12:25:07",
-          },
-          {
-            comment: "크리스마스 저녁을 함께할 산타를 구해요", 
             user: "유저님의 소원",
             time: "12:25:07",
           },
-        ].map((data, idx)=> {
+          {
+            comment: "짱 큰 눈사람 만들어주세요", 
+            user: "유저님의 소원",
+            time: "12:25:07",
+          },
+          {
+            comment: "짱 큰 눈사람 만들어주세요", 
+            user: "유저님의 소원",
+            time: "12:25:07",
+          },
+        ].map((data, idx: number, )=> {
           return (
-            <Link to="/santarun/Detail" key={idx}>
+            <Link to={baseUrl+"/Detail"} key={idx}>
               <div className="main-comment">
                 <div className="main-comment-time">
+                  {/* {data.STATION_NM} */}
                   {data.user}<br/>
                   {data.time}
                 </div>

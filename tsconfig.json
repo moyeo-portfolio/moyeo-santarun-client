@@ -1,10 +1,15 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
+      "outDir": "./dist/",
+      "noImplicitReturns": true,
+      "noImplicitThis": true,
+      "noImplicitAny": true,
+      "strictNullChecks": true,
       "typeRoots": ["src/types"],
-      "target": "es2016",
-      "jsx": "react-jsx",
-      "module": "esnext",
+      "module": "commonjs",
+      "target": "es5",
+      "jsx": "react",
       "sourceMap": true,
       "removeComments": true,
       "esModuleInterop": true,
@@ -24,12 +29,14 @@
       "moduleResolution": "node",
       "resolveJsonModule": true,
       "isolatedModules": true,
-      "noEmit": true
+      "noEmit": true,
+      "noEmitOnError": true
     },
     "include": [
-      "./src/"
+      "./src"
     ],
     "exclude": [
-      "node_modules/*"
+      "node_modules",
+      "build"
     ]
 }
